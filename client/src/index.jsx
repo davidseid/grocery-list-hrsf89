@@ -16,11 +16,15 @@ class App extends React.Component {
     }
   }
 
+  addGroceryItem(itemName) {
+    console.log(itemName);
+  }
+
   
   render () {
     return (
       <div>
-        <AddGrocery />
+        <AddGrocery addGroceryItem={this.addGroceryItem.bind(this)} />
         <GroceryList list={this.state.list} />
       </div>
     )

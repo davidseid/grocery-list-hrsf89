@@ -4,6 +4,7 @@ class AddGrocery extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
+      item: 'mozzarella sticks'
     }
   }
 
@@ -13,7 +14,7 @@ class AddGrocery extends React.Component {
         Add Grocery
         <form>
           <input placeholder="Add groceries here"></input>
-          <button>Add to List</button>
+          <button onClick={() => {this.props.addGroceryItem(this.state.item)}}>Add to List</button>
         </form>
         
       </div>
