@@ -19,7 +19,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <GroceryList />
+        <GroceryList list={this.state.list} />
       </div>
     )
   }
