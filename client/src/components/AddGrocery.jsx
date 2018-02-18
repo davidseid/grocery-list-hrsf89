@@ -8,7 +8,16 @@ class AddGrocery extends React.Component {
   }
 
   render () {
-    return null;
+    return (
+      <div>
+        Add Grocery
+        <form>
+          <input placeholder="Add groceries here"></input>
+          <button>Add to List</button>
+        </form>
+        
+      </div>
+    )
   }
 }
 
