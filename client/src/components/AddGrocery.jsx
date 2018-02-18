@@ -4,19 +4,16 @@ class AddGrocery extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      item: 'mozzarella sticks'
+      item: ''
     }
   }
 
   render () {
     return (
       <div>
-        Add Grocery
-        <form>
-          <input placeholder="Add groceries here"></input>
-          <button onClick={() => {this.props.addGroceryItem(this.state.item)}}>Add to List</button>
-        </form>
-        
+        Add Grocery <br/>
+        <input placeholder="Add groceries here" onChange={(e) => this.setState({item: e.target.value})} ></input>
+        <button onClick={() => {this.props.addGroceryItem(this.state.item)}}>Add to List</button>        
       </div>
     )
   }
