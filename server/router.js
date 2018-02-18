@@ -8,6 +8,7 @@ router.use((req, res, next) => {
 
 router.post('/', (req, res) => {
   console.log('post handler in router works');
+  // here i should write to the database
 });
 
 

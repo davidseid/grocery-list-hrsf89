@@ -18,7 +18,6 @@ class App extends React.Component {
   }
 
   addGroceryItem(itemName) {
-    //ping the server with a post request
     $.ajax({
       url: '/?',
       method: "POST",
@@ -30,8 +29,7 @@ class App extends React.Component {
       error: (err) => {
         console.log(`Got this error from the POST request, ${err}`);
       }
-    })
-
+    });
   }
 
   
