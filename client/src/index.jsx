@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import GroceryList from './components/GroceryList.jsx';
 import AddGrocery from './components/AddGrocery.jsx';
+import $ from 'jquery';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +18,20 @@ class App extends React.Component {
   }
 
   addGroceryItem(itemName) {
-    console.log(itemName);
+    //ping the server with a post request
+    $.ajax({
+      url: '/?',
+      method: "POST",
+      data: JSON.stringify(itemName),
+      contentType: 'application/json',
+      success: (result) => {
+        console.log(`Successful POST request to the server, received back ${result}`);
+      },
+      error: (err) => {
+        console.log(`Got this error from the POST request, ${err}`);
+      }
+    })
+
   }
 
   
