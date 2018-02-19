@@ -18,10 +18,11 @@ class App extends React.Component {
   }
 
   addGroceryItem(itemName) {
+
     $.ajax({
-      url: '/?',
+      url: '/',
       method: "POST",
-      data: JSON.stringify(itemName),
+      data: JSON.stringify({data: itemName}),
       contentType: 'application/json',
       success: (result) => {
         console.log(`Successful POST request to the server, received back ${result}`);
