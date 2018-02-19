@@ -14,6 +14,23 @@ var groceriesSchema = mongoose.Schema({
 
 var GroceryItem = mongoose.model('GroceryItem', groceriesSchema);
 
+var saveToDatabase = (itemName, callback) => {
+  // make a doc
+  var newItem = new GroceryItem({name: itemName, quantity: 1});
+
+  // save it to the database
+  newItem.save((err, newItem) => {
+    if (err) {
+      callback(err, null);
+    }
+    callback(null, newItem);
+  })
+}
+
+
+module.exports.db = db;
+module.exports.saveToDatabase = saveToDatabase;
+
 // var kiwi = new GroceryItem({ name: 'kiwi', quantity: 7});
 
 // kiwi.save((err, kiwi) => {

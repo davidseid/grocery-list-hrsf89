@@ -1,7 +1,9 @@
 var express = require('express');
 var router = require('./router');
 var bodyParser = require('body-parser');
+var db = require('../database');
 var app = express();
+
 
 app.use('/', (req, res, next) => {
   console.log(`${req.method} received to ${req.url}`);
